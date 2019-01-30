@@ -15,7 +15,15 @@ export class HomeComponent implements OnInit {
   constructor(private ofertasService: OfertasService) { }
 
   ngOnInit() {
-   this.ofertas = this.ofertasService.getOfertas()   
-  }
+    this.ofertasService.getOfertas2()
 
+      .then((ofertasPromise: Oferta[]) => {         
+         this.ofertas = ofertasPromise //tratamento do resolve
+      })
+
+      .catch((parametros: any) => {
+        console.log(parametros.mensagemErro)  //tratamento do reject
+      })      
+    }
 }
+
