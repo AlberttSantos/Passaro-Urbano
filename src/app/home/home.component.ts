@@ -15,14 +15,12 @@ export class HomeComponent implements OnInit {
   constructor(private ofertasService: OfertasService) { }
 
   ngOnInit() {
-    this.ofertasService.getOfertas2()
-
-      .then((ofertasPromise: Oferta[]) => {         
-         this.ofertas = ofertasPromise //tratamento do resolve
+    this.ofertasService.getOfertas()
+      .then((ofertas: Oferta[]) => {  
+         this.ofertas = ofertas //tratamento do resolve
       })
-
       .catch((parametros: any) => {
-        console.log(parametros.mensagemErro)  //tratamento do reject
+        console.log(parametros.mensagemErro) //tratamento do reject
       })      
     }
 }
