@@ -11,6 +11,6 @@ export class OfertasService {
         //requisição HTTP
         return this.http.get<Oferta[]>('http://localhost:3000/ofertas?destaque=true')
             .toPromise()
-            .then((resposta) => resposta)            
+            .then((resposta) =>  resposta )            
     }
 }
