@@ -11,6 +11,12 @@ export class OfertasService {
         //requisição HTTP
         return this.http.get<Oferta[]>('http://localhost:3000/ofertas?destaque=true')
             .toPromise()
-            .then((resposta) =>  resposta )            
+            .then((resposta) => resposta)
+    }
+
+    public getOfertasPorCategria(categoria: string): Promise<Oferta[]> {
+        return this.http.get<Oferta[]>(`http://localhost:3000/ofertas?categoria=${categoria}`)
+            .toPromise()
+            .then((resposta) => resposta)
     }
 }
