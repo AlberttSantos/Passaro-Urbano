@@ -19,5 +19,5 @@ export class DiversaoComponent implements OnInit {
       .then((ofertasRecebidas: Oferta[]) =>
         this.ofertas = ofertasRecebidas)
   }
- 
+
 }
