@@ -41,6 +41,17 @@
       </div>
 
     </div>
+    <nav>
+      <div class="nav nav-tabs" id="nav-tab" role="tablist" style="margin-bottom: 25px">
+        <a class="nav-item nav-link active" data-toggle="tab" routerLinkActive="active" routerLink="como-usar" role="tab"
+          aria-controls="nav-home" aria-selected="true">Como usar</a>
+        <a class="nav-item nav-link" data-toggle="tab" routerLinkActive="active" routerLink="onde-fica" role="tab"
+          aria-controls="nav-profile" aria-selected="false">Onde fica</a>        
+      </div>
+    </nav>
+    <div class="tab-content" id="nav-tabContent">
+     <router-outlet></router-outlet>
+    </div>
 
   </div>
 </div>
