@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router' //Rota ativa
 import { OfertasService } from '../ofertas.service'
 import { Oferta } from '../shared/ofertas.model'
+import { interval } from 'rxjs';
+// import { interval } from 'rxjs/observable/interval';
 
 @Component({
   selector: 'app-oferta',
@@ -22,9 +24,15 @@ export class OfertaComponent implements OnInit {
       .then((ofertaRecebida: Oferta) => { this.oferta = ofertaRecebida })
 
     // Subscriber
-    // this.route.params.subscribe((parametro: any)=>{
-    //   console.log(parametro.id)
-    // })
+    // this.route.params.subscribe(
+    //   (parametro: any) => { console.log(parametro.id) },
+    //   (erro: any) => { console.log(erro) },
+    //   () => { console.log("Sucesso") }
+    // )
+
+    let tempo = interval(2000)
+    
+    tempo.subscribe((intervalo: number) => console.log(intervalo))
 
   }
 
